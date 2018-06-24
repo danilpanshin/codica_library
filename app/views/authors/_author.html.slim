@@ -1,0 +1,5 @@
+tr
+  td = author.name
+  td = author.books.collect(&:title).join(", ") if author.books.present?
+  td = link_to 'Edit author', edit_author_path(author)
+  td = link_to 'Delete author', author_path(author), method: :delete

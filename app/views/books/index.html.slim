@@ -1,0 +1,8 @@
+table
+  tr
+    td Title:
+    td Author:
+    td Category:
+  = render @books
+
+p= link_to 'New book', new_book_path, class: 'btn'  
