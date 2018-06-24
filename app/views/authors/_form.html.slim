@@ -1,0 +1,6 @@
+= form_with model: @author, local: true do |form|
+  p
+    = form.label :name
+    = form.text_field :name, id: :author_name
+  p
+    = form.submit 

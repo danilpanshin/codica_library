@@ -1,0 +1,7 @@
+tr
+  td = book.title
+  td = book.authors.collect(&:name).join(", ") if book.authors.present?
+  td = book.category.title if book.category.present?
+  td = link_to 'Edit book', edit_book_path(book)
+  td = link_to 'Delete book', book_path(book), method: :delete
+  
