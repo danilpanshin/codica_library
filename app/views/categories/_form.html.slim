@@ -1,0 +1,6 @@
+= form_with model: @category, local: true do |form|
+  p
+    = form.label :title
+    = form.text_field :title, id: :category_title
+  p
+    = form.submit 

@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :authors
+
+  resources :categories
 end
