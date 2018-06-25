@@ -1,0 +1,3 @@
+= form_tag(:controller => "books", :action => "delete_author") do
+  = select_tag 'id', options_from_collection_for_select(@book.authors, :id, :name)
+  = submit_tag("Delete author")

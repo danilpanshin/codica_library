@@ -39,9 +39,29 @@ class BooksController < ApplicationController
     redirect_to books_path, notice: 'Book was deleted.'
   end
 
-  # def add_author
-  #   @book = Book.find(params[:book_id])
-  # end
+  def add
+    
+  end
+
+  def add_author
+    @book = Book.find(params[:book_id])
+    lookup = params[:id]
+    author = Author.find(lookup)
+    @book.authors.push(author)    
+    redirect_to books_path
+  end
+
+  def delete_author_form
+    @book = Book.find(params[:book_id])
+  end
+
+  def delete_author
+    @book = Book.find(params[:book_id])
+    lookup = params[:id]
+    author = Author.find(lookup)
+    @book.authors.delete(author)    
+    redirect_to books_path
+  end
   
   private
 
