@@ -11,4 +11,10 @@
 - elsif current_page?(categories_path)
   = link_to 'Books', books_path, class: 'btn'  
   '
-  = link_to 'Authors', authors_path, class: 'btn'  
+  = link_to 'Authors', authors_path, class: 'btn' 
+- else
+  = link_to 'Books', books_path, class: 'btn'  
+  '
+  = link_to 'Authors', authors_path, class: 'btn'
+  '   
+  = link_to 'Categories', categories_path, class: 'btn'

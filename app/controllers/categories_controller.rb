@@ -38,6 +38,30 @@ class CategoriesController < ApplicationController
     @category.destroy
     redirect_to categories_path, notice: 'Category deleted.'
   end
+
+  def add
+    
+  end
+
+  def add_book
+    @category = Category.find(params[:category_id])
+    lookup = params[:id]
+    book = Book.find(lookup)
+    @category.books.push(book)    
+    redirect_to categories_path
+  end
+
+  def delete_book_form
+    @category = Category.find(params[:category_id])
+  end
+
+  def delete_book
+    @category = Category.find(params[:category_id])
+    lookup = params[:id]
+    book = Book.find(lookup)
+    @category.books.delete(book)    
+    redirect_to categories_path
+  end
   
   private
 

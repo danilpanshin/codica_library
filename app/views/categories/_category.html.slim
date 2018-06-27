@@ -3,3 +3,5 @@ tr
   td = category.books.collect(&:title).join(", ") if category.books.present?
   td = link_to 'Edit category', edit_category_path(category)
   td = link_to 'Delete category', category_path(category), method: :delete
+  td = link_to 'Add book to category', category_add_path(category)
+  td = link_to 'Delete book from category', category_delete_book_form_path(category)

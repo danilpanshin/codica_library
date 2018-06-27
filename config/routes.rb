@@ -9,5 +9,10 @@ Rails.application.routes.draw do
 
   resources :authors
 
-  resources :categories
+  resources :categories do
+    get '/add/' => 'categories#add'
+    post 'add_book' => 'categories#add_book'
+    get '/delete_book_form/' => 'categories#delete_book_form'
+    post '/delete_book' => 'categories#delete_book'
+  end
 end
