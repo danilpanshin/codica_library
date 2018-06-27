@@ -1,0 +1,9 @@
+h1
+  = @category.title
+  |  category books:
+ul.books
+  - @category.books.each do |b|
+    - if b.persisted?
+        li
+          h3
+            p= b.title

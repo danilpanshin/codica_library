@@ -1,0 +1,10 @@
+h1
+  |  Books of 
+  = @author.name
+ul.books
+  - @author.books.each do |b|
+    - if b.persisted?
+        li
+          h3
+            p= b.title
+          
