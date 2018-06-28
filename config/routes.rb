@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :books do
     get '/add/' => 'books#add'
@@ -15,4 +16,6 @@ Rails.application.routes.draw do
     get '/delete_book_form/' => 'categories#delete_book_form'
     post '/delete_book' => 'categories#delete_book'
   end
+
+  root to: 'categories#index'
 end

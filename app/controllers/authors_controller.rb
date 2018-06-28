@@ -16,7 +16,7 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params)    
     if @author.save
-      redirect_to authors_path, notice: 'Your book successfully created.'
+      redirect_to authors_path, notice: 'The author successfully created.'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class AuthorsController < ApplicationController
 
   def update
     if @author.update(author_params)
-      redirect_to authors_path, notice: 'Author created.'
+      redirect_to authors_path, notice: 'The author updated.'
     else
       render :new
     end
@@ -36,7 +36,7 @@ class AuthorsController < ApplicationController
 
   def destroy
     @author.destroy
-    redirect_to authors_path, notice: 'Author deleted.'
+    redirect_to authors_path, notice: 'The author deleted.'
   end
   
   private

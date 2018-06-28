@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_category, only: %i[show update destroy edit]
 
   def index
