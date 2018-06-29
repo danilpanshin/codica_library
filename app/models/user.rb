@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  ROLES = %w[admin book_moderator category_moderator].freeze
+  ROLES = %w[admin book_moderator category_moderator guest].freeze
 
   def user_name
     self.email.split('@').first.capitalize
