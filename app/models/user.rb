@@ -8,5 +8,21 @@ class User < ApplicationRecord
 
   def user_name
     self.email.split('@').first.capitalize
-  end       
+  end 
+  
+  def admin?
+    self.role == 'admin'
+  end
+
+  def book_moderator?
+    self.role == 'book_moderator'
+  end
+
+  def category_moderator?
+    self.role == 'category_moderator'
+  end
+
+  def guest?
+    self.role == 'guest'
+  end
 end

@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_book, only: %i[show update destroy edit]
+  load_and_authorize_resource
 
   def index
     @books = Book.all

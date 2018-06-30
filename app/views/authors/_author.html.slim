@@ -1,6 +1,9 @@
 tr
   td = author.name
   td = author.books.collect(&:title).join(", ") if author.books.present?
-  td = link_to 'Edit', edit_author_path(author)
-  td = link_to 'Delete', author_path(author), method: :delete
-  td = link_to 'Show', author_path(author)
+  -if can? :update, Author
+    td = link_to 'Edit', edit_author_path(author)
+  -if can? :destroy, Author
+    td = link_to 'Delete', author_path(author), method: :delete
+  -if can? :read, Author
+    td = link_to 'Show', author_path(author)

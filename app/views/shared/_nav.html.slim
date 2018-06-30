@@ -11,25 +11,26 @@
     |  | 
     = link_to 'Sign Up', new_user_registration_path, class: :btn
 
+-if can? :read, Book, Author
+  - if current_page?(books_path)
+    = link_to 'Authors', authors_path, class: 'btn'  
+    '
+    = link_to 'Categories', categories_path, class: 'btn'
 
-- if current_page?(books_path)
-  = link_to 'Authors', authors_path, class: 'btn'  
-  '
-  = link_to 'Categories', categories_path, class: 'btn'
+  - elsif current_page?(authors_path)
+    = link_to 'Books', books_path, class: 'btn'
+    '  
+    = link_to 'Categories', categories_path, class: 'btn'  
 
-- elsif current_page?(authors_path)
-  = link_to 'Books', books_path, class: 'btn'
-  '  
-  = link_to 'Categories', categories_path, class: 'btn'  
-
-- elsif current_page?(categories_path)
-  = link_to 'Books', books_path, class: 'btn'  
-  '
-  = link_to 'Authors', authors_path, class: 'btn' 
-- else
-  = link_to 'Books', books_path, class: 'btn'  
-  '
-  = link_to 'Authors', authors_path, class: 'btn'
-  '   
-  = link_to 'Categories', categories_path, class: 'btn'
+  - elsif current_page?(categories_path)
+    = link_to 'Books', books_path, class: 'btn'  
+    '
+    = link_to 'Authors', authors_path, class: 'btn'
+     
+  - else
+    = link_to 'Books', books_path, class: 'btn'  
+    '
+    = link_to 'Authors', authors_path, class: 'btn'
+    '   
+    = link_to 'Categories', categories_path, class: 'btn'
 

@@ -5,5 +5,5 @@ table
     td Author:
     td Category:
   = render @books
-
-p= link_to 'New book', new_book_path, class: 'btn'  
+-if can? :create, Book
+  p= link_to 'New book', new_book_path, class: 'btn'  

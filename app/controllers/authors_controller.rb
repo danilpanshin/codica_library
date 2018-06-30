@@ -1,6 +1,8 @@
 class AuthorsController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_author, only: %i[show update destroy edit]
-
+  load_and_authorize_resource
+  
   def index
     @authors = Author.all
   end
