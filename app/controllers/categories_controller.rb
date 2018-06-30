@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
   end
 
   def add
-    
+    @category = Category.find(params[:category_id])
   end
 
   def add_book

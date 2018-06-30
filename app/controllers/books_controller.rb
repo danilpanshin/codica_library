@@ -42,12 +42,12 @@ class BooksController < ApplicationController
   end
 
   def add
-    
+    @book = Book.find(params[:book_id])
   end
 
   def add_author
     @book = Book.find(params[:book_id])
-    lookup = params[:id]
+    lookup = params[:name]
     author = Author.find(lookup)
     @book.authors.push(author)    
     redirect_to books_path
