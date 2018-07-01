@@ -6,7 +6,7 @@ tr
   -if can? :update, Category
     td = link_to 'Edit', edit_category_path(category)
   -if can? :destroy, Category
-    td = link_to 'Delete', category_path(category), method: :delete
+    td = link_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }
   -if can? :update, Category
     td = link_to 'Add book to category', category_add_path(category)
   -if can? :update, Category

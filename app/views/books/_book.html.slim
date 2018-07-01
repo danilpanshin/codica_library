@@ -9,7 +9,7 @@ tr
   -if can? :update, Book
     td = link_to 'Edit book', edit_book_path(book)
   -if can? :destroy, Book
-    td = link_to 'Delete book', book_path(book), method: :delete
+    td = link_to 'Delete book', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }
   -if can? :update, Book
     td = link_to 'Add author to book', book_add_path(book)
   -if can? :update, Book

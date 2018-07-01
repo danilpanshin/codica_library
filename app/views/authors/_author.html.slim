@@ -4,6 +4,6 @@ tr
   -if can? :update, Author
     td = link_to 'Edit', edit_author_path(author)
   -if can? :destroy, Author
-    td = link_to 'Delete', author_path(author), method: :delete
+    td = link_to 'Delete', author_path(author), method: :delete, data: { confirm: 'Are you sure?' }
   -if can? :read, Author
     td = link_to 'Show', author_path(author)
