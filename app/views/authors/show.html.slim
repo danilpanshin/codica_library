@@ -9,4 +9,4 @@ ul.books
             p= b.title
           p
               = image_tag b.cover_url(:standard)  
-          
+= link_to "back", request.referer.present? ? request.referer : root_path, class: 'btn'           
