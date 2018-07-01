@@ -1,4 +1,8 @@
 tr
+  
+  td
+    - unless book.cover_url.nil?
+      = image_tag book.cover_url(:thumbnail)
   td = book.title
   td = book.authors.collect(&:name).join(", ") if book.authors.present?
   td = book.category.title if book.category.present?

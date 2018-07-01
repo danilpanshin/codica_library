@@ -47,8 +47,7 @@ class BooksController < ApplicationController
 
   def add_author
     @book = Book.find(params[:book_id])
-    lookup = params[:name]
-    author = Author.find(lookup)
+    author = Author.find(params[:name])
     @book.authors.push(author)    
     redirect_to books_path
   end
@@ -59,8 +58,7 @@ class BooksController < ApplicationController
 
   def delete_author
     @book = Book.find(params[:book_id])
-    lookup = params[:id]
-    author = Author.find(lookup)
+    author = Author.find(params[:name])
     @book.authors.delete(author)    
     redirect_to books_path
   end
@@ -72,6 +70,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :category_id)
+    params.require(:book).permit(:title, :category_id, :cover)
   end
 end

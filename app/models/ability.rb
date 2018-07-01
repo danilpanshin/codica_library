@@ -12,7 +12,8 @@ class Ability
       can :manage, Category
       can :read, [Author, Book]    
     elsif user.guest?
-      can :read, Category  
+      can :read, Category
+      can :read, Author  
     end
   end
 end

@@ -3,9 +3,13 @@
   p
     = form.label :title
     = form.text_field :title, id: :book_title
+   
   p
     = form.label :category_id
     = form.collection_select :category_id, Category.all, :id, :title, prompt: true
+  p
+    
+    = form.file_field :cover 
 
   p
     = form.submit 

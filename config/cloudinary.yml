@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: danilpanshin
+  api_key: '129662395482485'
+  api_secret: M17HjqIUOsFseYM_Tmy7R50k2ic
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: danilpanshin
+  api_key: '129662395482485'
+  api_secret: M17HjqIUOsFseYM_Tmy7R50k2ic
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: danilpanshin
+  api_key: '129662395482485'
+  api_secret: M17HjqIUOsFseYM_Tmy7R50k2ic
+  enhance_image_tag: true
+  static_image_support: false

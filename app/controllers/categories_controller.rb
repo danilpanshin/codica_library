@@ -47,8 +47,7 @@ class CategoriesController < ApplicationController
 
   def add_book
     @category = Category.find(params[:category_id])
-    lookup = params[:id]
-    book = Book.find(lookup)
+    book = Book.find(params[:title])
     @category.books.push(book)    
     redirect_to categories_path
   end
@@ -59,8 +58,7 @@ class CategoriesController < ApplicationController
 
   def delete_book
     @category = Category.find(params[:category_id])
-    lookup = params[:id]
-    book = Book.find(lookup)
+    book = Book.find(params[:title])
     @category.books.delete(book)    
     redirect_to categories_path
   end

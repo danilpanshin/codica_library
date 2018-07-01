@@ -6,4 +6,15 @@ ul.books
     - if b.persisted?
         li
           h3
-            p= b.title
+            p
+              = b.title
+            p 
+              | Author(s):
+              '
+              - b.authors.each do |a|
+                = link_to a do
+                  = a.name
+                '
+                
+            p
+              = image_tag b.cover_url(:standard)
