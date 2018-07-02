@@ -1,24 +1,23 @@
-h1
+h1[align="center"]
   = @category.title
   |  category books:
 
-.container
-  ul.list-inline 
-    - @category.books.each do |b|
-      - if b.persisted?
-          li.list-inline-item
-            .col-12.col-md-10
-              h3
-                p[align="center"]
-                  = b.title
-                p[align="center"]
-                  | Author(s):
-                  '
-                  - b.authors.each do |a|
+
+table.table-hover[align="center"]
+  thead
+    tr[align="center"]
+      th Cover:
+      th Title:
+      th Author(s):        
+  tbody
+    - @category.books.each do |b|    
+      tr[align="center"]
+        td = image_tag b.cover_url(:standard) 
+        td = link_to b.title, book_path(b)
+        td 
+          - b.authors.each do |a|
                     = link_to a do
                       = a.name
-                    '
-                    
-                p[align="center"]
-                  = image_tag b.cover_url(:standard)
-              
+                      ' 
+
+

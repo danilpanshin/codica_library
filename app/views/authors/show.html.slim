@@ -1,4 +1,4 @@
-h1
+h1[align="center"]
   |  Books of 
   = @author.name
 
@@ -9,7 +9,7 @@ h1
           li.list-inline-item
             .col-12.col-md-12 
               h3[align="center"]
-                = b.title
+                = link_to b.title, book_path(b)
               p[align="center"]
                 = image_tag b.cover_url(:standard)  
 = link_to "back", request.referer.present? ? request.referer : root_path, class: 'btn btn-info btn-xs'           
