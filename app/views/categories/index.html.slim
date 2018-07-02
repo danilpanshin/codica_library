@@ -1,9 +1,12 @@
 h1 Categories menu
-table
-  tr
-    td Title:
-    td Books:
-    
-  = render @categories
+table.table-hover
+  thead
+    tr[align="center"]
+      th Title:
+      th Books:
+      th[colspan="5"]
+        | Actions:
+  tbody      
+    = render @categories
 -if can? :create, Category
-  p= link_to 'New category', new_category_path, class: 'btn'  
+  p= link_to 'New category', new_category_path, class: 'btn btn-success'

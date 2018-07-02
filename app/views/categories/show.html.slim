@@ -1,21 +1,24 @@
 h1
   = @category.title
   |  category books:
-ul.books
-  - @category.books.each do |b|
-    - if b.persisted?
-        li
-          h3
-            p
-              = b.title
-            p 
-              | Author(s):
-              '
-              - b.authors.each do |a|
-                = link_to a do
-                  = a.name
-                '
-                
-            p
-              = image_tag b.cover_url(:standard)
-= link_to "back", categories_path, class: 'btn'               
+
+.container
+  ul.list-inline 
+    - @category.books.each do |b|
+      - if b.persisted?
+          li.list-inline-item
+            .col-12.col-md-10
+              h3
+                p[align="center"]
+                  = b.title
+                p[align="center"]
+                  | Author(s):
+                  '
+                  - b.authors.each do |a|
+                    = link_to a do
+                      = a.name
+                    '
+                    
+                p[align="center"]
+                  = image_tag b.cover_url(:standard)
+              

@@ -1,3 +1,4 @@
 = form_tag(:controller => "categories", :action => "add_book") do
   = select_tag 'title', options_from_collection_for_select(Book.where.not(id: @category.books.to_a), :id, :title)
+  '
   = submit_tag("Add book")

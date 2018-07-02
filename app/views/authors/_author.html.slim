@@ -1,9 +1,9 @@
-tr
+tr[align="center"]
   td = author.name
   td = author.books.collect(&:title).join(", ") if author.books.present?
   -if can? :update, Author
-    td = link_to 'Edit', edit_author_path(author)
+    td = link_to 'Edit', edit_author_path(author), class: "btn btn-warning btn-sm"
   -if can? :destroy, Author
-    td = link_to 'Delete', author_path(author), method: :delete, data: { confirm: 'Are you sure?' }
+    td = link_to 'Delete', author_path(author), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"
   -if can? :read, Author
-    td = link_to 'Show', author_path(author)
+    td = link_to 'Show', author_path(author), class: "btn btn-info btn-sm"

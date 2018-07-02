@@ -1,4 +1,4 @@
-tr
+tr[align="center"]
   
   td
     - unless book.cover_url.nil?
@@ -7,10 +7,10 @@ tr
   td = book.authors.collect(&:name).join(", ") if book.authors.present?
   td = book.category.title if book.category.present?
   -if can? :update, Book
-    td = link_to 'Edit book', edit_book_path(book)
+    td = link_to 'Edit book', edit_book_path(book), class: "btn btn-warning btn-sm"
   -if can? :destroy, Book
-    td = link_to 'Delete book', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }
+    td = link_to 'Delete book', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"
   -if can? :update, Book
-    td = link_to 'Add author to book', book_add_path(book)
+    td = link_to 'Add author to book', book_add_path(book), class: "btn btn-success btn-sm"
   -if can? :update, Book
-    td = link_to 'Delete author from book', book_delete_author_form_path(book)
+    td = link_to 'Delete author from book', book_delete_author_form_path(book), class: "btn btn-danger btn-sm"

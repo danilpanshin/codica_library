@@ -19,5 +19,9 @@ Rails.application.routes.draw do
     post '/delete_book' => 'categories#delete_book'
   end
 
-  root to: 'categories#index'
+  #root to: 'categories#index'
+
+  get 'welcome/index'
+  root 'welcome#index'
+  get :welcome, to: 'welcome#index'
 end

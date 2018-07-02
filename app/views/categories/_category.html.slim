@@ -1,13 +1,13 @@
-tr
+tr[align="center"]
   td = category.title
   td = category.books.collect(&:title).join(", ") if category.books.present?
   -if can? :read, Category
-    td = link_to 'Show', category_path(category)
+    td = link_to 'Show', category_path(category), class: "btn btn-info btn-sm"
   -if can? :update, Category
-    td = link_to 'Edit', edit_category_path(category)
+    td = link_to 'Edit', edit_category_path(category), class: "btn btn-warning btn-sm"
   -if can? :destroy, Category
-    td = link_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }
+    td = link_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"
   -if can? :update, Category
-    td = link_to 'Add book to category', category_add_path(category)
+    td = link_to 'Add book to category', category_add_path(category), class: "btn btn-success btn-sm"
   -if can? :update, Category
-    td = link_to 'Delete book from category', category_delete_book_form_path(category)
+    td = link_to 'Delete book from category', category_delete_book_form_path(category), class: "btn btn-danger btn-sm"

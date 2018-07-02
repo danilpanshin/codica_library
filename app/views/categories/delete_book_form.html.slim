@@ -1,3 +1,4 @@
 = form_tag(:controller => "categories", :action => "delete_book") do
   = select_tag 'title', options_from_collection_for_select(@category.books.all, :id, :title)
+  '
   = submit_tag("Delete book")

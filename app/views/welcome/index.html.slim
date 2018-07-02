@@ -1,0 +1,7 @@
+h1
+  - if user_signed_in?
+    p[align="center"]
+      = link_to 'Go to Library', categories_path, class: "btn btn-primary btn-block"
+  - else
+    p
+      | Wellcome to Codica Library App

@@ -1,10 +1,14 @@
 h1 Books menu
-table
-  tr
-    td Cover:
-    td Title:
-    td Author:
-    td Category:
-  = render @books
+table.table-hover
+  thead
+    tr[align="center"]
+      th Cover:
+      th Title:
+      th Author:
+      th Category:
+      th[colspan="4"]
+        | Actions:
+  tbody  
+    = render @books
 -if can? :create, Book
-  p= link_to 'New book', new_book_path, class: 'btn'  
+  p= link_to 'New book', new_book_path, class: 'btn btn-success'

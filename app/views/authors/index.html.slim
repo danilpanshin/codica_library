@@ -1,9 +1,12 @@
 h1 Authors menu
-table
-  tr
-    td Name:
-    td Books:
-    
-  = render @authors
+table.table-hover
+  thead
+    tr[align="center"]
+      th Name:
+      th Books:
+      th[colspan="3"]
+        | Actions:
+  tbody    
+    = render @authors
 -if can? :create, Author
-  p= link_to 'New author', new_author_path, class: 'btn'  
+  p= link_to 'New author', new_author_path, class: 'btn btn-success'

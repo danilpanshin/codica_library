@@ -1,3 +1,4 @@
 = form_tag(:controller => "books", :action => "add_author") do
   = select_tag 'name', options_from_collection_for_select(Author.where.not(id: @book.authors.to_a), :id, :name)
+  '
   = submit_tag("Add author")
