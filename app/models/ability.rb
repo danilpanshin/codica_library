@@ -13,7 +13,8 @@ class Ability
       can :read, [Author, Book]    
     elsif user.guest?
       can :read, Category
-      can :read, Author  
+      can :read, Author
+      can :read, Book  
     end
   end
 end
