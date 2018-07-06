@@ -10,5 +10,9 @@ h2[align="center"] Authors:
   - if a.persisted?
       p[align="center"]          
         = link_to a.name, author_path(a)
+p[align="center"]
+  |  Published 
+  = time_ago_in_words(@book.created_at)
+  |  ago       
                
 = link_to "back", request.referer.present? ? request.referer : root_path, class: 'btn btn-info btn-xs' 
